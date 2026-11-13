@@ -1,0 +1,147 @@
+.ledger-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.ledger-toolbar .ant-select {
+  flex: 1;
+  min-width: 0;
+}
+.memory-card {
+  padding: 18px 15px;
+  margin: 14px 0;
+  background: #f9f7eb;
+  border: 1px solid #ccd7bd;
+  border-radius: 12px;
+}
+.memory-card.highlight {
+  border-color: #6e8b5b;
+  box-shadow: 0 0 0 2px #8ca16a33;
+}
+.memory-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #67734f;
+}
+.memory-content {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #2a4734;
+  overflow-wrap: anywhere;
+  margin: 10px 0;
+}
+.memory-meta,
+.memory-source {
+  font-size: 11px;
+  color: #607052;
+  line-height: 1.8;
+}
+.memory-source blockquote {
+  margin: 0 0 8px;
+  border-left: 2px solid #a4b58a;
+  padding-left: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #3e543a;
+}
+.memory-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.sensitive-settings p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #617052;
+}
+.sensitive-settings label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.ledger-error {
+  padding: 20px;
+  color: #8d4d37;
+}
+.ledger-error button {
+  margin-left: 10px;
+}
+.ledger-loading {
+  padding: 55px;
+  text-align: center;
+}
+.extraction-state {
+  font-size: 11px;
+  color: #61734f;
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.extraction-state button,
+.memory-citation {
+  border: 0;
+  background: transparent;
+  color: #356451;
+  padding: 2px 4px;
+  font-size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.extraction-state.failed {
+  color: #8d4d37;
+}
+.memory-citations {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.memory-drawer .ant-drawer-body {
+  padding-top: 20px;
+}
+.memory-ledger-nav {
+  margin-top: 5px;
+}
+.model-settings { margin-top:24px; padding-top:20px; border-top:1px solid #d5ddca; }
+.model-settings-heading { display:flex; align-items:center; justify-content:space-between; color:#2d503a; }
+.model-name { margin:10px 0 16px; color:#586d4b; }
+.model-key-input { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.model-key-input .ant-input-password { flex:1; min-width:0; }
+.model-result { color:#356451; margin:12px 0 0; }
+.model-result.error { color:#9b503a; }
+.model-settings .ant-collapse { margin-top:10px; }
+
+.challenge-card,
+.followup-card {
+  padding: 14px 18px;
+  background: rgba(249, 247, 235, 0.84);
+  border: 1px solid rgba(117, 141, 104, 0.42);
+  border-radius: 14px;
+  backdrop-filter: blur(5px);
+}
+.challenge-card { align-self: flex-start; width: min(100%, 540px); }
+.challenge-card blockquote { margin: 8px 0; overflow-wrap: anywhere; }
+.workflow-meta { display: flex; gap: 10px; align-items: center; margin: 0 0 12px; color: #506149; font-size: 12px; }
+.workflow-link { border: 0; background: none; color: #315b40; cursor: pointer; text-decoration: underline; }
+.followup-list { display: grid; gap: 8px; margin: 0 0 20px; }
+.followup-list h2 { margin: 0; font-size: 15px; color: #315b40; }
+.reminder-cancel { margin-inline-start: 10px; }
+.followup-card p { margin: 0 0 9px; overflow-wrap: anywhere; }
+.followup-toggle { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #506149; font-size: 12px; }
+.backfill-form { display: grid; gap: 10px; }
+.sensitive-settings .privacy-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px; min-height: 36px; }
+.privacy-row > .ant-switch { grid-column: 3; }
+.sensitive-settings .backfill-form { margin-top: 12px; padding: 12px; border: 1px solid #d7dfca; border-radius: 9px; background: rgba(255, 253, 246, 0.62); }
+.sensitive-settings .backfill-dates label { display: grid; justify-content: stretch; }
+.backfill-form p { margin: 0; }
+.backfill-form > .ant-btn { justify-self: start; }
+.backfill-dates { display: grid; grid-template-columns: repeat(auto-fit, minmax(138px, 1fr)); gap: 8px; }
+.backfill-dates label { display: grid; gap: 4px; }
+.backfill-status { color: #506149; font-size: 12px; }

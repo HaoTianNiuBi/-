@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-11-12T19:31:33+08:00",
+  "source": "虚构输入 · 本地 HTTP · 真实模型",
+  "cases": [
+    {
+      "case": "身份",
+      "library": "life",
+      "input": "我目前是植物标本社的记录员。",
+      "expected": "我目前是植物标本社的记录员",
+      "memories": [
+        "我目前是植物标本社的记录员"
+      ],
+      "sources": [
+        "我目前是植物标本社的记录员。"
+      ],
+      "extraction": "recorded",
+      "provider": "deepseek",
+      "firstTextMs": 1111,
+      "durationMs": 1538,
+      "passed": true
+    },
+    {
+      "case": "偏好",
+      "library": "life",
+      "input": "我喜欢桂花乌龙茶。",
+      "expected": "我喜欢桂花乌龙茶",
+      "memories": [
+        "我喜欢桂花乌龙茶"
+      ],
+      "sources": [
+        "我喜欢桂花乌龙茶。"
+      ],
+      "extraction": "recorded",
+      "provider": "deepseek",
+      "firstTextMs": 1087,
+      "durationMs": 1514,
+      "passed": true
+    },
+    {
+      "case": "目标",
+      "library": "life",
+      "input": "我计划每周完成两张叶脉观察图。",
+      "expected": "我计划每周完成两张叶脉观察图",
+      "memories": [
+        "我计划每周完成两张叶脉观察图"
+      ],
+      "sources": [
+        "我计划每周完成两张叶脉观察图。"
+      ],
+      "extraction": "recorded",
+      "provider": "deepseek",
+      "firstTextMs": 1696,
+      "durationMs": 2559,
+      "passed": true
+    },
+    {
+      "case": "假设",
+      "library": "life",
+      "input": "假设我喜欢柠檬苏打，你会怎么回答？",
+      "expected": null,
+      "memories": [],
+      "sources": [],
+      "extraction": "no_match",
+      "provider": "deepseek",
+      "firstTextMs": 1342,
+      "durationMs": 1980,
+      "passed": true
+    },
+    {
+      "case": "敏感类别默认关闭",
+      "library": "life",
+      "input": "我习惯每天记录健康状态。",
+      "expected": null,
+      "memories": [],
+      "sources": [],
+      "extraction": "sensitive_skipped",
+      "provider": "deepseek",
+      "firstTextMs": 1432,
+      "durationMs": 1898,
+      "passed": true
+    },
+    {
+      "case": "同库跨会话召回",
+      "library": "life",
+      "input": "你记得我偏好哪一种茶吗？只回答有依据的名称。",
+      "reply": "桂花乌龙茶",
+      "expectedRecall": true,
+      "citedTeaMemory": true,
+      "retryMatched": true,
+      "provider": "deepseek",
+      "firstTextMs": 5771,
+      "durationMs": 5988,
+      "passed": true
+    },
+    {
+      "case": "不同库隔离",
+      "library": "study",
+      "input": "你记得我偏好哪一种茶吗？只回答有依据的名称。",
+      "reply": "我这边没有关于你偏好哪种茶的依据，所以答不出具体名称。",
+      "expectedRecall": false,
+      "citedTeaMemory": false,
+      "retryMatched": true,
+      "provider": "deepseek",
+      "firstTextMs": 1197,
+      "durationMs": 1502,
+      "passed": true
+    },
+    {
+      "case": "删除后召回",
+      "library": "life",
+      "input": "你记得我偏好哪一种茶吗？只回答有依据的名称。",
+      "reply": "我这边没有关于你偏好哪种茶的记忆依据，所以不能给出名称。",
+      "expectedRecall": false,
+      "citedTeaMemory": false,
+      "provider": "deepseek",
+      "firstTextMs": 1575,
+      "durationMs": 1865,
+      "passed": true
+    }
+  ],
+  "model": "deepseek-flash",
+  "metrics": {
+    "memoryCorrect": 3,
+    "memoryCount": 3,
+    "sourceCovered": 3,
+    "expectedCount": 3,
+    "expectedMatched": 3,
+    "firstTextMedianMs": 1387.0,
+    "firstTextMinMs": 1087,
+    "firstTextMaxMs": 5771,
+    "firstTextSamples": 8
+  }
+}

@@ -1,0 +1,45 @@
+.qiyu-date-field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.qiyu-date.ant-picker {
+  width: 100%;
+  min-width: 0;
+  border-radius: 7px;
+}
+
+.qiyu-date .ant-picker-suffix { color: #6a765e; }
+
+.qiyu-date--sage.ant-picker:not(.ant-picker-disabled) {
+  background: #e2e8d6;
+  border-color: #a7b59a;
+}
+
+.qiyu-date--sage.ant-picker:not(.ant-picker-disabled):is(:hover, .ant-picker-focused) {
+  border-color: #7e906b;
+}
+
+.qiyu-calendar .ant-picker-panel-container {
+  border: 1px solid #bcb091;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px #433c2a26;
+}
+
+.qiyu-calendar .ant-picker-content thead th {
+  color: #686e56;
+  font-size: 12px;
+}
+
+.qiyu-calendar--sage .ant-picker-panel-container {
+  background: #edf0e1;
+  border-color: #a7b59a;
+}
+
+.qiyu-calendar--sage :is(.ant-picker-header, .ant-picker-footer) { border-color: #cbd5bc; }
+
+.qiyu-calendar--sage .ant-picker-cell-in-view:not(.ant-picker-cell-disabled, .ant-picker-cell-selected):hover .ant-picker-cell-inner {
+  background: #e0e7d2;
+}
+

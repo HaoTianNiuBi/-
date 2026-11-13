@@ -1,0 +1,19 @@
+services:
+  qiyu:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
+      QIYU_ORIGIN: ${QIYU_ORIGIN:-http://127.0.0.1:8765}
+    volumes:
+      - qiyu-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8765/api/health', timeout=3).read()"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+volumes:
+  qiyu-data:
